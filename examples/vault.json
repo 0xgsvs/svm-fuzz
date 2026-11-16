@@ -1,0 +1,62 @@
+{
+  "name": "buggy-vault",
+  "program_id": "3nrNgr7DBiPUxMCGBAZUbaA24heeS8yCN6Q2BYsqStbh",
+  "accounts": [
+    {
+      "name": "vault",
+      "address": "pALTd3LLjma8cekBZLdQaBtX4a2VNbTDAkcNA5GoUhY",
+      "lamports": 5000000000,
+      "owner": "3nrNgr7DBiPUxMCGBAZUbaA24heeS8yCN6Q2BYsqStbh",
+      "data_hex": "002ff73787b603f5b15a195d026000bc34d32935be21aee2d16774d10e5fcc50",
+      "can_sign": false
+    },
+    {
+      "name": "authority",
+      "address": "1jRRajKew9UTsfTaERXeye8fhz9zysrFx56aWBMepMd",
+      "lamports": 1000000000,
+      "owner": "11111111111111111111111111111111",
+      "can_sign": true,
+      "secret_key": "4UpqRzCNUabnX5CVwF1c33vmXeJjvJaohdDoc1zTaXe2WBEuuw8xHFxwLrg41s4LcDZCmShQTKhB7MggYGvQZLX9"
+    },
+    {
+      "name": "user",
+      "address": "As8VHctWMdZ2iZnoWNziXtv59GPvEGuriuJry9bAbFDF",
+      "lamports": 10000000000,
+      "owner": "3nrNgr7DBiPUxMCGBAZUbaA24heeS8yCN6Q2BYsqStbh",
+      "can_sign": true,
+      "secret_key": "KkEbLC1eyJy6Ypj2eiUWpWQSaMRhFqpvVeegF2VoDwd23ME8exXg5eiMDMAHZMUP64GPVyko6tfTPQQKx8a6PSd"
+    },
+    {
+      "name": "recipient",
+      "address": "FSdmZbtxMpfByepBYWM8ea7SeRyH9aue9FEyFdeJqzXd",
+      "lamports": 1000000,
+      "owner": "11111111111111111111111111111111",
+      "can_sign": true,
+      "secret_key": "4UgwrjuAYAp5hzPTXrNkvJqYyVTMjNaReNDBPEv4JzX6j7CHv4DxqV6cwTM5vLiAiiAKDBCvS1oveTmaonsXfWnF"
+    }
+  ],
+  "instructions": [
+    {
+      "name": "deposit",
+      "index": 0,
+      "accounts": [
+        { "name": "vault", "writable": true },
+        { "name": "user", "writable": true, "required_signer": true }
+      ],
+      "data": { "kind": "fixed", "hex": "" }
+    },
+    {
+      "name": "withdraw",
+      "index": 1,
+      "accounts": [
+        { "name": "vault", "writable": true },
+        { "name": "authority", "writable": false },
+        { "name": "recipient", "writable": true }
+      ],
+      "data": { "kind": "fixed", "hex": "" }
+    }
+  ],
+  "protected": [
+    { "account": "vault", "authority": "authority" }
+  ]
+}

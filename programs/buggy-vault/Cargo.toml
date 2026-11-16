@@ -1,0 +1,17 @@
+[package]
+name = "buggy-vault"
+description = "Deliberately vulnerable SBF fixture for svm-fuzz"
+version.workspace = true
+edition = "2021"
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(feature, values("custom-panic", "custom-heap"))', 'cfg(target_os, values("solana"))'] }
+
+[dependencies]
+solana-program = "=2.3.0"

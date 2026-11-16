@@ -1,1 +1,5 @@
 /target
+/programs/*/target
+/corpus
+/keys
+*.so

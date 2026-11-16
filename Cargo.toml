@@ -1,6 +1,28 @@
-[package]
-name = "svm-fuzz"
+[workspace]
+resolver = "2"
+members = ["crates/fuzzer", "programs/buggy-vault"]
+
+[workspace.package]
 version = "0.1.0"
 edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/0xgsvs/svm-fuzz"
 
-[dependencies]
+[workspace.dependencies]
+anyhow = "1.0"
+bs58 = "0.5"
+clap = { version = "4.6", features = ["derive"] }
+hex = "0.4"
+litesvm = "0.16.0"
+rand = "0.9"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+solana-account = "4.3"
+solana-address = "2.6.1"
+solana-instruction = "3.4"
+solana-keypair = "3.1"
+solana-message = "4.2"
+solana-signer = "3.0"
+solana-transaction = "4.1"
+thiserror = "2.0"
